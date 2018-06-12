@@ -1,0 +1,29 @@
+{
+  "name": "outcomm-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "auth0-js": "^9.6.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-rate-limit": "^2.11.0",
+    "express-secure-only": "^0.2.1",
+    "history": "^4.7.2",
+    "npm-run-all": "^4.1.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.81.1",
+    "watson-developer-cloud": "^3.4.5",
+    "watson-speech": "^0.34.1"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel serve starter",
+    "starter": "react-scripts start",
+    "serve": "node ./src/server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,14 @@
+div.intro-text{
+    height: 45vh;
+}
+span {
+    color: purple;
+}
+
+div.speech-to-text{
+    height: 50vh;
+}
+
+p{
+    font-size: 2em;
+}
