@@ -1,33 +1,47 @@
 import React, { Component } from 'react';
-import { Responsive, Menu, Image } from 'semantic-ui-react';
+import { Responsive,
+         Menu,
+         Image,
+         Icon } from 'semantic-ui-react';
 import logo from '../../sources/Artboard1.png';
 
 class DesktopMenu extends Component{
 
-    constructor(){
-        super()
-        this.state = {
-            logName:'Log In',
+
+    renderLogButton = () => {
+        if(this.props.isAuth){
+            return(
+                <Menu>
+                    <Menu.Item position='left'>
+                        <Image size='small' src={logo} spaced />
+                    </Menu.Item>
+                    <Menu.Item position='right' link>
+                        <Icon name='user circle' color='teal' />
+                    </Menu.Item>
+                    <Menu.Item onClick = {this.props.logout} link>
+                        Log Out
+                    </Menu.Item>
+                </Menu>
+            )
+        } else {
+            return(
+                <Menu>
+                    <Menu.Item position='left'>
+                        <Image size='small' src={logo} spaced />
+                    </Menu.Item>
+                    <Menu.Item position='right' onClick = {this.props.login} link>
+                        Log In / Sign up
+                    </Menu.Item>
+                </Menu>
+            )
         }
     }
-
-    handleToggle = () => this.setState({ visible: !this.state.visible });
 
     render(){
         return(
             <div>
                 <Responsive>
-                    <Menu>
-                        <Menu.Item position = 'left'>
-                            <Image size = 'small' src = {logo} spaced/>
-                        </Menu.Item>
-                        <Menu.Item name={this.state.logName} position='right' link>
-                            {this.state.logName}
-                        </Menu.Item>
-                        <Menu.Item link>
-                            <a src='#'> Sign Up</a>
-                        </Menu.Item>
-                    </Menu>
+                    {this.renderLogButton()}
                 </Responsive>
             </div>
         )

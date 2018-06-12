@@ -48,7 +48,7 @@ class Talk extends Component {
 
                 </Grid.Column>
                 <Grid.Column color='purple'>
-                    <Image size='medium' src={lipsLogo} onClick = {this.onSubmitText} centered />
+                    <Image className='lips' size='medium' src={lipsLogo} onClick = {this.onSubmitText} centered />
                 </Grid.Column>
             </Grid>
         )

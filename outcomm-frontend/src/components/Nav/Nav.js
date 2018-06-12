@@ -9,15 +9,15 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 
 
 class Nav extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             visible: false
         }
     }
 
     handleToggle = () => {
-        console.log("click", this.state.visible);
+        
         this.setState({ visible: !this.state.visible })
     };
 
@@ -28,12 +28,12 @@ class Nav extends Component {
                 <Sidebar.Pusher onClick= {this.handleToggle} >
                     <Image size = 'tiny' src = {mobileLogo} centered/>
                 </Sidebar.Pusher>
-                <MobileMenu visible={this.state.visible}>
+                <MobileMenu visible={this.state.visible} isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout}>
                     <Container>{this.props.children}</Container>
                 </MobileMenu>
                 </Responsive>
                 <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-                    <DesktopMenu />
+                    <DesktopMenu isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout}/>
                     <Container>{this.props.children}</Container>
                 </Responsive>
             </Responsive>

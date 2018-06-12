@@ -72,7 +72,7 @@ class Listen extends Component {
         return(
             <Grid columns={2} as='div' className='speech-to-text'>
             <Grid.Column color = 'purple'>
-                <Image size = 'medium' src = {earLogo} centered onClick = {this.onListen} link/>
+                <Image className = 'ear' size = 'medium' src = {earLogo} centered onClick = {this.onListen} />
             </Grid.Column>
             <Grid.Column color = 'purple'>
                 <br/>

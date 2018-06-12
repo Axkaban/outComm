@@ -1,41 +1,32 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import { Responsive } from 'semantic-ui-react';
-import Callback from '../../Callback/Callback';
-import Auth from '../../Auth/Auth';
-import history from '../../history';
 import Nav from '../Nav/Nav';
 import Listen from '../Listen/Listen';
 import Talk from '../Talk/Talk';
 
-const auth = new Auth();
 
-const handleAuthentication = ({location}) => {
-  if (/access_token|id_token|error/.test(location.hash)) {
-    auth.handleAuthentication();
-  }
-}
 
 class App extends Component {
-
+  
   
 
-  login() {
-    auth.login();
-  }
+  // login = () => {
+  //   this.props.auth.login();
+  // }
 
-  logout() {
-    auth.logout();
-  }
+  // logout = () => {
+  //   this.props.auth.logout();
+  // }
 
   render() {
-    const { isAuthenticated } = auth;
+
+    const { isAuthenticated } = this.props.auth;
 
     return (
       <div className="App">
        <Responsive>
-         <Nav>
+         <Nav isAuthenticated = {isAuthenticated()} login = {this.props.auth.login} logout = {this.props.auth.logout}>
          <br/>
          <div className='main-container'>
           <Listen/>
