@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class UsersController {
 
@@ -57,7 +58,7 @@ public class UsersController {
 
         userFromDb.setName(userRequest.getName());
         userFromDb.setPicture(userRequest.getPicture());
-        userFromDb.setEmail(userRequest.getEmail());
+        userFromDb.setNickname(userRequest.getNickname());
 
         return userRepository.save(userFromDb);
     }

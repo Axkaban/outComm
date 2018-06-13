@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class MessagesController {
 
@@ -40,6 +41,8 @@ public class MessagesController {
         messageRepository.delete(messageId);
         return HttpStatus.OK;
     }
+
+
 
     @PostMapping("/")
     public Message createNewMessage(@RequestBody Message newMessage) {

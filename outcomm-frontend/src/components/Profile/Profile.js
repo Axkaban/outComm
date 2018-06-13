@@ -3,6 +3,7 @@ import { Button,
         Header,
         Image,
         Modal } from 'semantic-ui-react';
+import User from '../../services/Users';
 
 class Profile extends Component {
     constructor(props){
@@ -17,10 +18,16 @@ class Profile extends Component {
         if (!userProfile) {
           getProfile((err, profile) => {
             this.setState({ profile });
+            console.log(profile, "from no user");
+        User.saveUserInDb(profile);
           });
+
         } else {
           this.setState({ profile: userProfile });
+          console.log(this.state.profile , "from else");
+        User.saveUserInDb(this.state.profile);
         }
+        
       }
 
       render(){

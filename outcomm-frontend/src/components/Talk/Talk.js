@@ -6,6 +6,7 @@ import { Grid,
 import synthesize from 'watson-speech/text-to-speech/synthesize';
 import lipsLogo from '../../sources/mouth.png';
 import './Talk.css';
+import MessageBar from '../MesageBar/MessageBar';
 
 
 class Talk extends Component {
@@ -50,6 +51,7 @@ class Talk extends Component {
                 <Grid.Column color='purple'>
                     <Image className='lips' size='medium' src={lipsLogo} onClick = {this.onSubmitText} centered />
                 </Grid.Column>
+                
             </Grid>
         )
     }

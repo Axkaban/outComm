@@ -29,12 +29,12 @@ class Nav extends Component {
                     <Image size = 'tiny' src = {mobileLogo} centered/>
                 </Sidebar.Pusher>
                 <MobileMenu visible={this.state.visible} isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout} auth = {this.props.auth}>
-                    <Container>{this.props.children}</Container>
+                    <Container color = 'purple'>{this.props.children}</Container>
                 </MobileMenu>
                 </Responsive>
                 <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                     <DesktopMenu isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout} auth = {this.props.auth}/>
-                    <Container>{this.props.children}</Container>
+                    <Container color = 'purple'>{this.props.children}</Container>
                 </Responsive>
             </Responsive>
         )

@@ -25,12 +25,12 @@ public class User {
     @Column(name = "PICTURE")
     private String picture;
 
-    @Column(name = "EMAIL")
-    private String email;
+    @Column(name = "NICKNAME")
+    private String nickname;
 
-    public User(String name, String picture, String email) {
+    public User(String name, String picture, String nickname) {
         this.name = name;
         this.picture = picture;
-        this.email = email;
+        this.nickname = nickname;
     }
 }
