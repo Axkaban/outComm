@@ -1,0 +1,136 @@
+07:04:39.811 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:+HeapDumpOnOutOfMemoryError, -Xmx1024m, -Dfile.encoding=UTF-8, -Duser.country, -Duser.language=en, -Duser.variant]
+07:04:40.715 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=885adbc7-a3be-4b5f-9fed-8c340a8d11e0,javaHome=/opt/jdk1.8.0_172,daemonRegistryDir=/users-api/cache/daemon,pid=30,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+07:04:40.887 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
+07:04:40.895 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+07:04:40.905 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? true
+07:04:40.914 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.18.0.6
+07:04:40.928 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote multicast interface eth0
+07:04:40.940 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
+07:04:40.951 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+07:04:40.958 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? false
+07:04:40.966 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+07:04:40.989 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]].
+07:04:41.028 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Wed Jun 13 07:04:41 GMT 2018, with address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:04:41.041 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:04:41.126 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=885adbc7-a3be-4b5f-9fed-8c340a8d11e0,javaHome=/opt/jdk1.8.0_172,daemonRegistryDir=/users-api/cache/daemon,pid=30,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+07:04:41.145 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]], context: DefaultDaemonContext[uid=885adbc7-a3be-4b5f-9fed-8c340a8d11e0,javaHome=/opt/jdk1.8.0_172,daemonRegistryDir=/users-api/cache/daemon,pid=30,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+07:04:41.239 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+07:04:41.256 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+07:04:41.282 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+07:04:41.290 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+07:04:41.318 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+07:04:41.399 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
+07:04:41.412 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:37968 to /127.0.0.1:37613.
+07:04:41.438 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
+07:04:41.511 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+07:04:42.604 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Build
+07:04:42.619 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}
+07:04:42.630 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}.
+07:04:42.640 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api} with connection: socket connection from /127.0.0.1:37613 to /127.0.0.1:37968.
+07:04:42.681 [ERROR] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:37613 to /127.0.0.1:37968] after 0.0 minutes of idle
+07:04:42.692 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:04:42.710 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:04:42.742 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+07:04:42.759 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+07:04:42.791 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+07:04:42.806 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+07:04:42.819 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+07:04:42.829 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}. Dispatching build started information...
+07:04:42.843 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+07:04:42.929 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin, JAVA_JCE=unlimited, SPRING_PROFILES_ACTIVE=dev, JAVA_HOME=/opt/jdk, OLDPWD=/users-api, GLIBC_VERSION=2.27-r0, LANG=C.UTF-8, JAVA_VERSION_MAJOR=8, GRADLE_USER_HOME=cache, HOSTNAME=0cf1c0d2b5c1, GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc, JAVA_VERSION_MINOR=172, PWD=/users-api, JAVA_PACKAGE=jdk, JAVA_VERSION_BUILD=11, HOME=/root, SHLVL=1}
+07:04:43.026 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
+07:04:43.033 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@29351c0b
+07:04:43.082 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+07:04:43.095 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 30). The daemon log file: /users-api/cache/daemon/4.5.1/daemon-30.out.log
+07:04:43.128 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 954.7 MB]
+07:04:43.161 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+07:04:43.172 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+07:04:43.223 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+07:04:43.234 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=885adbc7-a3be-4b5f-9fed-8c340a8d11e0,javaHome=/opt/jdk1.8.0_172,daemonRegistryDir=/users-api/cache/daemon,pid=30,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+:compileJava/users-api/src/main/java/com/example/usersapi/repositories/UserRepository.java:3: error: package com.example.usersapi.models does not exist
+import com.example.usersapi.models.User;
+                                  ^
+/users-api/src/main/java/com/example/usersapi/repositories/UserRepository.java:12: error: cannot find symbol
+public interface UserRepository extends CrudRepository<User, Long> {
+                                                       ^
+  symbol: class User
+/users-api/src/main/java/com/example/usersapi/models/User.java:5: error: cannot find symbol
+@Table(name = "USERS")
+ ^
+  symbol: class Table
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:3: error: package com.example.usersapi.models does not exist
+import com.example.usersapi.models.User;
+                                  ^
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:21: error: cannot find symbol
+    public Iterable<User> findAllUsers() {
+                    ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:26: error: cannot find symbol
+    public User findUserById(@PathVariable Long userId) throws NotFoundException {
+           ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:45: error: cannot find symbol
+    public User createNewUser(@RequestBody User newUser) {
+                                           ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:45: error: cannot find symbol
+    public User createNewUser(@RequestBody User newUser) {
+           ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:50: error: cannot find symbol
+    public User updateUserById(@PathVariable Long userId, @RequestBody User userRequest) throws NotFoundException {
+                                                                       ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/controllers/UsersController.java:50: error: cannot find symbol
+    public User updateUserById(@PathVariable Long userId, @RequestBody User userRequest) throws NotFoundException {
+           ^
+  symbol:   class User
+  location: class UsersController
+/users-api/src/main/java/com/example/usersapi/models/User.java:8: error: cannot find symbol
+    @Id
+     ^
+  symbol:   class Id
+  location: class User
+11 errors
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1m 6s
+1 actionable task: 1 executed
+07:05:35.157 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+07:05:35.182 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+07:05:35.188 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:37613 to /127.0.0.1:37968]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@674d8dd3 with state Busy
+07:05:35.194 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:37613 to /127.0.0.1:37968]
+07:05:35.197 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+07:05:35.201 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as idle, address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:05:35.204 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [8bd2a526-f96b-4196-bbbb-0ebb22f1315a port:37613, addresses:[/127.0.0.1]]
+07:05:35.208 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+07:05:35.213 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+07:05:35.225 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+07:05:35.231 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+07:05:35.232 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Failure[value=org.gradle.initialization.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':compileJava'.]
+07:05:35.261 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: dispatching class org.gradle.launcher.daemon.protocol.Failure
+07:05:35.422 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=20e556d5-a5cb-4fac-adf9-e659f129adef.1, currentDir=/users-api}
+07:05:35.584 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Finished
+07:05:35.589 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@1b206bfb
+07:05:35.596 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@1b206bfb
+07:05:35.609 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: stopping connection
+07:05:35.622 [DEBUG] [org.gradle.internal.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+07:05:35.641 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received null
+07:05:35.647 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received end-of-input from client.
+07:05:35.654 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: stopping connection
