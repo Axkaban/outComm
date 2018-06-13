@@ -44,8 +44,8 @@ app.use(cors());
 var sttAuthService = new watson.AuthorizationV1(
   Object.assign(
     {
-      username: process.env.REACT_SPEECH_TO_TEXT_USERNAME, // or hard-code credentials here
-      password: process.env.REACT_SPEECH_TO_TEXT_PASSWORD
+      username: process.env.REACT_APP_SPEECH_TO_TEXT_USERNAME, // or hard-code credentials here
+      password: process.env.REACT_APP_SPEECH_TO_TEXT_PASSWORD
     },
     vcapServices.getCredentials('speech_to_text') // pulls credentials from environment in bluemix, otherwise returns {}
   )
@@ -70,8 +70,8 @@ app.use('/api/speech-to-text/token', function(req, res) {
 var ttsAuthService = new watson.AuthorizationV1(
   Object.assign(
     {
-      username: process.env.REACT_TEXT_TO_SPEECH_USERNAME, // or hard-code credentials here
-      password: process.env.REACT_TEXT_TO_SPEECH_PASSWORD
+      username: process.env.REACT_APP_TEXT_TO_SPEECH_USERNAME, // or hard-code credentials here
+      password: process.env.REACT_APP_TEXT_TO_SPEECH_PASSWORD
     },
     vcapServices.getCredentials('text_to_speech') // pulls credentials from environment in bluemix, otherwise returns {}
   )

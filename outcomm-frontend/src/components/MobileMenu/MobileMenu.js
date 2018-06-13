@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Responsive, 
     Sidebar, 
     Menu, 
-    Segment,
-    Icon } from 'semantic-ui-react';
+    Segment } from 'semantic-ui-react';
+import Profile from '../Profile/Profile';
  
 class MobileMenu extends Component{
 
@@ -18,12 +18,15 @@ class MobileMenu extends Component{
         if(this.props.isAuth){
             return(
                 <Sidebar color="teal" as={Menu} animation='overlay' direction='top' visible={this.props.visible} vertical inverted>
-                    <Menu.Item>
-                        <Icon name='user circle' color='teal' />
-                    </Menu.Item>
+                   
+                   <Profile trigger = { <Menu.Item>
+                        Profile
+                    </Menu.Item>}
+                    auth = {this.props.auth}/>
                     <Menu.Item onClick = {this.props.logout}> 
                         Log Out
                     </Menu.Item>
+                  
                 </Sidebar>
             )
         }else{

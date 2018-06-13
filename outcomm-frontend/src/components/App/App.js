@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
        <Responsive>
-         <Nav isAuthenticated = {isAuthenticated()} login = {this.props.auth.login} logout = {this.props.auth.logout}>
+         <Nav isAuthenticated = {isAuthenticated()} login = {this.props.auth.login} logout = {this.props.auth.logout} auth = {this.props.auth}>
          <br/>
          <div className='main-container'>
           <Listen/>

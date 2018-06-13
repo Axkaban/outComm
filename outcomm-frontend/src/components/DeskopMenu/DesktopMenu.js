@@ -4,6 +4,7 @@ import { Responsive,
          Image,
          Icon } from 'semantic-ui-react';
 import logo from '../../sources/Artboard1.png';
+import Profile from '../Profile/Profile';
 
 class DesktopMenu extends Component{
 
@@ -16,8 +17,8 @@ class DesktopMenu extends Component{
                         <Image size='small' src={logo} spaced />
                     </Menu.Item>
                     <Menu.Item position='right' link>
-                        <Icon name='user circle' color='teal' />
-                    </Menu.Item>
+                       <Profile trigger = {<Icon name='user circle' color='teal' size = 'huge' aria-label = 'icon'/>}  auth = {this.props.auth}/>                    
+                       </Menu.Item>
                     <Menu.Item onClick = {this.props.logout} link>
                         Log Out
                     </Menu.Item>

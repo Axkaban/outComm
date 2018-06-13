@@ -28,12 +28,12 @@ class Nav extends Component {
                 <Sidebar.Pusher onClick= {this.handleToggle} >
                     <Image size = 'tiny' src = {mobileLogo} centered/>
                 </Sidebar.Pusher>
-                <MobileMenu visible={this.state.visible} isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout}>
+                <MobileMenu visible={this.state.visible} isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout} auth = {this.props.auth}>
                     <Container>{this.props.children}</Container>
                 </MobileMenu>
                 </Responsive>
                 <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-                    <DesktopMenu isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout}/>
+                    <DesktopMenu isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout} auth = {this.props.auth}/>
                     <Container>{this.props.children}</Container>
                 </Responsive>
             </Responsive>
