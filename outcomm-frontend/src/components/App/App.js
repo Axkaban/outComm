@@ -32,10 +32,7 @@ toggleVisibility = () => this.setState({ visible: !this.state.visible })
          <br/>
          <div className='main-container'>
           <Listen/>
-          <Talk />
-          <MessageBar isAuth = {isAuthenticated()} visible = {this.state.visible} toggle = {this.toggleVisibility}> 
-          <div><Button onClick={this.toggleVisibility} color='black' fluid><Icon name='chevron up' /></Button></div>
-          </MessageBar>
+          <Talk isAuth = {isAuthenticated()}/>
           </div>
          </Nav>
        </Responsive>

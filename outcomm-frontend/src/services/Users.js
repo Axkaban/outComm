@@ -4,34 +4,48 @@ const route = `${process.env.REACT_APP_DB_USER_SERVER}`;
 
 const User = {
 
-    saveUserInDb(incomingUser){
 
-        console.log(incomingUser);
+ saveUserInDb(incomingUser){
 
-        Axios.get(route)
+       return Axios.get(route)
         .then(res => res.data)
-        .then(user => {
-            if(!user.length <= 0){
-                if(user.find(user => user.email === incomingUser.email)){
-                    return;
+        .then(users => {
+            if(users.length > 0){
+                
+                let theUser =users.find(user => user.nickname === incomingUser.nickname);
+                if(theUser){
+                    console.log(theUser);
+                    return theUser.id;
+                }else{
+                    console.log('no user')
+                    let data = {
+                        name: incomingUser.name,
+                        picture: incomingUser.picture,
+                        nickname: incomingUser.nickname
+                     }
+                     return Axios.post(route, data)
+                    .then( res => res.data.id );
                 }
+            }else{
+                console.log('new')
+                let data = {
+                    name: incomingUser.name,
+                    picture: incomingUser.picture,
+                    nickname: incomingUser.nickname
+                 }
+                 return Axios.post(route, data)
+                .then( res => console.log(res.data.id) );
             }
 
         });
+
         
-        // let data = {
-        //    name: incomingUser.name,
-        //    picture: incomingUser.picture,
-        //    email: incomingUser.email
-        // }
-
-        // return fetch(route, {
-        //     method: "POST",
-        //     body: data
-        // })
-        // .then(res => console.log(res));
-
+    
     }
+
+    // getUsers(){
+
+    // }
 }
 
 export default User;

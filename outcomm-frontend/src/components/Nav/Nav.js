@@ -34,7 +34,7 @@ class Nav extends Component {
                 </Responsive>
                 <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                     <DesktopMenu isAuth = {this.props.isAuthenticated} login = {this.props.login} logout = {this.props.logout} auth = {this.props.auth}/>
-                    <Container color = 'purple'>{this.props.children}</Container>
+                    <Container color = 'purple' fluid>{this.props.children}</Container>
                 </Responsive>
             </Responsive>
         )
