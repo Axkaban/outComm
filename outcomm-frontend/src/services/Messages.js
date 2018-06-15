@@ -4,19 +4,40 @@ const route = `${process.env.REACT_APP_DB_MESSAGES_SERVER}`;
 
 const Messages = {
 
-    async getMessages(userId){
-        return await Axios.get(route)
+    getMessages(userId){
+        console.log(userId);
+        let userMessages = [];
+        return Axios.get(route)
         .then(messages => {
+           
+           messages.data.map(message => {
+              if (message.userId === userId){ 
+                 userMessages.push(message);
+                }else{
+                    console.log('mo message')
+                }
+              
+            });
+            console.log(userMessages, "from get")
+           return userMessages;
 
-           return messages.data.map(message => message.userId === userId);
         })
     },
 
    async getFaveMessages(userId){
-      
+      let faves = [];
        let messages = await this.getMessages(userId);
         console.log(messages);
-        return messages.map(message => message.favorite === true);
+        messages.map(message => {
+            console.log(message.favorite, "<--message user || user ---> ", userId);
+           if (message.favorite === "true"){ 
+              faves.push(message);
+             }else{
+                 console.log('mo message')
+             }
+           
+         });
+         return faves;
     },
 
     saveMessage(messageObj){

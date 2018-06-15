@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { Grid,
         Image,
         Form, 
-        TextArea} from 'semantic-ui-react';
+        TextArea,
+        List,
+        Header,
+        Button} from 'semantic-ui-react';
 import synthesize from 'watson-speech/text-to-speech/synthesize';
 import lipsLogo from '../../sources/mouth.png';
 import './Talk.css';
 import MessageBar from '../MesageBar/MessageBar';
 import history from '../../history';
 import Messages from '../../services/Messages';
+import TextList from '../TextList/TextList';
 
 
 class Talk extends Component {
@@ -16,11 +20,12 @@ class Talk extends Component {
         super(props)
         this.state = {
             text: '',
-            id: ''
+            id: '',
+            messages: []
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         history.listen((location, action) => {
             console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
                this.setState({id: location.pathname.split('/')[1]})
@@ -54,19 +59,42 @@ class Talk extends Component {
            userId: this.state.id,
            favorite: false
        }
-       console.log(textO);
+       console.log(textO, "<-- saving");
        Messages.saveMessage(textO);
        
     }
 
-    faveText = () => {
-
-    }
-
     getText = (txt) => {
         this.setState({
-            text: txt
+            text: txt,
+            messages: []
         })
+    }
+
+    getAllMessages = async() => {
+        await Messages.getMessages(parseInt(this.state.id))
+        .then(messages => {
+            this.setState({messages});
+        })
+    }
+
+    renderLst = () => {
+        console.log(this.state.messages)
+       
+            return this.state.messages.map((message, i) => {
+            
+                return (
+                    <List.Item key={i} floated = 'right'>
+                        <List.Content >
+                            <Header as='h4' textAlign='center'>{message.text}</Header>
+                        </List.Content>
+                        <List.Content>
+                            <Button onClick={() => { this.getText(message.text)}} floated = 'right'>Use</Button>
+                        </List.Content>
+                    </List.Item>
+                )
+            })
+       
     }
 
     render() {
@@ -75,9 +103,10 @@ class Talk extends Component {
                 <Grid.Column color='purple'>
                     <br />
                     <Form>
-                        <TextArea autoHeight placeholder='Start typing here and press the lips for it to be heard!' onChange = {this.handleChage}/>
+                        <TextArea autoHeight placeholder='Start typing here and press the lips for it to be heard!' value = {this.state.text} onChange = {this.handleChage}/>
                     </Form>
-                    <MessageBar isAuth = {this.props.isAuth} save = {this.saveText}/>
+                    <MessageBar isAuth = {this.props.isAuth} save = {this.saveText} getText = {this.getText} id = {this.state.id} getAllMessages = {this.getAllMessages}/>
+                   <List divided> {this.renderLst()}</List>
                     <br />
 
                 </Grid.Column>
